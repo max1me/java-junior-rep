@@ -1,5 +1,6 @@
 .idea
 *.iml
 out
-lesson01/
-lesson02/
+src/lesson01/
+src/lesson02/
+src/lesson
