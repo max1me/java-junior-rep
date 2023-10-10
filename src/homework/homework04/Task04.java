@@ -14,10 +14,6 @@ public class Task04 {
             if (intValue == 1) {
                 min = mid + 1;
             } else {
-                if (min == mid) {
-                    System.out.println("Вы загадали число " + min);
-                    break;
-                }
                 System.out.println("Число равно " + mid + "?");
                 intValue = scanner.nextInt();
                 if (intValue == 1) {
