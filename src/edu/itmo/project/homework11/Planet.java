@@ -9,12 +9,36 @@ public enum Planet {
     SATURN("Сатурн", 5.6834E26, 58232f),
     URANUS("Уран", 8.6810E25, 25362f),
     NEPTUNE("Нептун", 1.02413E26, 24622);
-    String name;
-    double mass;
-    float radius;
+    private String name;
+    private double mass;
+    private float radius;
     Planet(String name, double mass, float radius) {
         this.name = name;
         this.mass = mass;
+        this.radius = radius;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getMass() {
+        return mass;
+    }
+
+    public void setMass(double mass) {
+        this.mass = mass;
+    }
+
+    public float getRadius() {
+        return radius;
+    }
+
+    public void setRadius(float radius) {
         this.radius = radius;
     }
 }
