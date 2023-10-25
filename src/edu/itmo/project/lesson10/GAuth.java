@@ -1,6 +1,6 @@
 package edu.itmo.project.lesson10;
 
-public class GAuth implements Auth {
+public final class GAuth implements Auth {
     @Override
     public boolean login(String username, String password) {
         return false;

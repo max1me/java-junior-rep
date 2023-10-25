@@ -1,6 +1,7 @@
 package edu.itmo.project.lesson10;
 
-public interface Auth {
+public sealed interface Auth
+permits GAuth, AppAuth {
     boolean login(String username, String password);
     boolean logout();
 
