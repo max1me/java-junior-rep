@@ -1,10 +1,10 @@
-package edu.itmo.project.package15;
+package edu.itmo.project.lesson1516;
 
 import java.util.*;
 
 public class Lesson15 {
     public static void main(String[] args) {
-        LinkedList<String> strings01 = new LinkedList<>();
+/*        LinkedList<String> strings01 = new LinkedList<>();
         List<String> strings02;
 
         System.out.println(strings01.size());
@@ -41,7 +41,23 @@ public class Lesson15 {
                 integers.remove(element);
             }
         }
-        integers.removeIf(integer -> integer == 67);
+        integers.removeIf(integer -> integer == 67);*/
 
+        HashSet<Integer> integerHashSet = new HashSet<>();
+        integerHashSet.add(4);
+        integerHashSet.add(6);
+        integerHashSet.add(4);
+        integerHashSet.add(47);
+        integerHashSet.add(70);
+        integerHashSet.add(145);
+
+        System.out.println(integerHashSet);
+
+        Comparator<User> byName = new User.NameComparator();
+        Comparator<User> bySalary = new User.SalaryComparator();
+        Comparator<User> byNameThenBySalary = byName.thenComparing(bySalary);
+
+        TreeSet<User> users01 = new TreeSet<>(byNameThenBySalary);
+        TreeSet<User> users02 = new TreeSet<>(byName);
     }
 }
