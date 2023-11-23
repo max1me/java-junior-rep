@@ -10,6 +10,7 @@ public class AppFileWriter implements AppLogger {
     private String fileName;
 
     public AppFileWriter(String fileName) {
+        if (fileName == null) throw new IllegalArgumentException("Название файла должно быть указано");
         this.fileName = fileName;
     }
 
@@ -22,7 +23,6 @@ public class AppFileWriter implements AppLogger {
             Files.writeString(path, s, StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println();
             System.out.println("Данные не были записаны");
         }
     }
