@@ -16,11 +16,11 @@ public class Homework25 {
         /*for (int i = 0; i < byteArray01.length; i++) {
             byteArray03[i] = (byte)(byteArray01[i] ^ byteArray02[i]);
         }*/
-        System.out.println(text);
-        byteArray03 = XOR.xor(byteArray01, byteArray02);
-        System.out.println(new String(byteArray03, StandardCharsets.UTF_8));
-        byteArray03 = XOR.xor(byteArray03, byteArray02);
-        System.out.println(new String(byteArray03, StandardCharsets.UTF_8));
+        //System.out.println(text);
+        XOR.xor(byteArray01, byteArray02);
+        //System.out.println(new String(byteArray03, StandardCharsets.UTF_8));
+        XOR.xor(byteArray03, byteArray02);
+        //System.out.println(new String(byteArray03, StandardCharsets.UTF_8));
 
         try (FileOutputStream fileOutputStream = new FileOutputStream("out.txt");
             XOROutput xorOutput = new XOROutput(fileOutputStream, key)) {
@@ -35,7 +35,6 @@ public class Homework25 {
             byte[] array = new byte[fileInputStream.available()];
             int readBytes = xorInput.read(array);
             System.out.println(new String(array, StandardCharsets.UTF_8));
-            //System.out.println();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

@@ -15,6 +15,7 @@ public class XOROutput extends FilterOutputStream {
 
     @Override
     public void write(byte[] b) throws IOException {
-        super.write(XOR.xor(b, key.getBytes(StandardCharsets.UTF_8)));
+        XOR.xor(b, key.getBytes(StandardCharsets.UTF_8));
+        super.write(b);
     }
 }
