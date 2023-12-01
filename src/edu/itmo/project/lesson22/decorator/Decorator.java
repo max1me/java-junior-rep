@@ -7,6 +7,8 @@ public abstract class Decorator implements AppLogger {
         if (appLogger == null) throw new IllegalArgumentException("appLogger не может быть null");
         this.appLogger = appLogger;
     }
-    public void log(AppLogger appLogger) {
+    @Override
+    public void log(String s) {
+        appLogger.log(s);
     }
 }
