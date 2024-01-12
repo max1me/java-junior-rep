@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- -->
+    <!--1. GAV - обязательная информация -->
+    <groupId>org.example</groupId>
+    <artifactId>maven-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--SNAPSHOT - версия находится в разработке -->
+
+    <!--2. Необязательная информация -->
+    <name> Maven Project</name>
+    <description> Maven Project Lesson</description>
+
+    <!-- jar по умолчанию -->
+    <packaging>jar</packaging>
+    <!-- pom - родитель в модульной сборке -->
+    <!-- war  - для web приложений-->
+    <!-- ear - для enterprise приложений-->
+    <!-- репозиторий - хранилище артефактов-->
+    <!-- центральный -->
+    <!-- корпоративный -->
+    <!-- локальный .m2/repository-->
+    <!-- зависимости проекта -->
+    <dependencies><!-- все зависимости -->
+        <dependency>
+        <groupId>org.junit.jupiter</groupId><!-- указывать обязательно-->
+        <artifactId>junit-jupiter-engine</artifactId><!-- указывать обязательно-->
+        <version>5.10.1</version><!-- указывать обязательно-->
+        <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.4.1.Final</version>
+        </dependency>
+    </dependencies>
+
+    <!--            Область видимости зависимостей: <scope></scope>-->
+    <!--            <scope>compile</scope> - используется по умолчанию.
+                    Зависимость доступна во время выполнения, тестирования, сборки
+                    <scope>test</scope> - доступна только при тестировании
+                    <scope>runtime</scope> - используется по время выполнения / тестирования
+                     Не будет доступна на этапе сборки.
+                     Нет прямого доступа к классам библиотеки-->
+    <!--            <scope>import</scope> для модульной сборки-->
+    <!--            <scope>provided</scope> аналогично compile, но не попадет в сборку-->
+    <!--            <scope>system</scope> <systemPath>путь к библиотеке</systemPath>-->
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
